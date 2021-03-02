@@ -5,7 +5,7 @@ const networth = document.getElementById("networth"); // element with id educati
 const skills = document.getElementsByName("skills"); // HTMLCollection (like an array of elements, but not an actual array)
 const age = document.getElementsByName("age");
 const gossip=document.getElementsByClassName("gossip");
-const abilitiesEls = document.getElementsByClassName("abilities");
+
 const button = document.getElementById("submit");
 const love_letter = document.getElementById("love_letter");
 
@@ -20,30 +20,7 @@ const calculate = () => {
         price = getNewPrice(Math.round(getNewPrice(getNewPrice(price, education),networth)+skills),age);
         console.log(skills);
 
-        for(var i=0; i<abilitiesEls.length;i++){
-            if(abilitiesEls[i].checked === true){
-                checkedAbilities.push(parseFloat(abilitiesEls[i].value)); 
-    
-            }
-        }
-    
-        for(var i =0; i< checkedAbilities.length;i++){
-            skills += checkedAbilities[i];
-        }
-
-        for(var i=0; i<gossip.length;i++){
-            if(gossipsEls[i].checked === true){
-                checkedGossips.push(parseFloat(gossipsEls[i].value)); 
-    
-            }
-        }
-    
-        for(var i =0; i< checkedGossips.length;i++){
-            if(checkedGossips[i]%1==0 || checkedGossips[i]==0){
-                result = result + checkedGossips[i];
-    
-            } else result *= checkedGossips[i];
-        }
+   
        
         
     
